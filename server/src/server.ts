@@ -27,14 +27,17 @@ export class HttpServer {
                 console.log('data:', chunk);
             });
             req.on('end', () => {
-                console.log('end');
-                res.send(`${data} POST request to the homepage`);
+                var obj = JSON.parse(data)
+                console.log('end',obj.PhoneNumber);
+                res.send(`${obj.PhoneNumber} POST request to the homepage`);
             });
+            
             req.on('close', () => {
                 console.log('close');
             });
         })
     }
+
 
     /**
      * 启动服务器

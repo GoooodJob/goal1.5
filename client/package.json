@@ -1,7 +1,7 @@
 {
 	"name": "nodejs-console",
 	"version": "0.0.0",
-	"main": "./dist/server.js",
+	"main": "./dist/clients.js",
 	"description": "Simple API server",
 	"license": "MIT",
 	"scripts": {

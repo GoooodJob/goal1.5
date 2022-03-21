@@ -1,16 +1,20 @@
-import * as http from  'http';
-var port = 3000
+import * as http from 'http';
  
-var contents = "asdf";
- 
+var user = {
+    PhoneNumber: '15210943874'
+};
+
+var userString = JSON.stringify(user);
+
+
 var options:http.RequestOptions = {
     host:`127.0.0.1`,
     port:3000,
     path:'/post',
     method:'POST',
     headers:{
-        'Content-Type':'application/x-www-form-urlencoded',
-        'Content-Length':contents.length
+        'Content-Type':'application/json',
+        'Content-Length':userString.length
     }
 }
  
@@ -21,5 +25,5 @@ var req = http.request(options, (res)=>{
         console.log("data:",data); 
     });
 });
-req.write(contents);
+req.write(userString);
 req.end();
