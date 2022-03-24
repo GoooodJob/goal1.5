@@ -1,7 +1,8 @@
 import * as http from 'http';
  
 var user = {
-    PhoneNumber: '15210943874'
+    phoneNumber: '15210943874',
+    ID: 12345678910
 };
 
 var userString = JSON.stringify(user);

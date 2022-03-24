@@ -28,8 +28,9 @@ export class HttpServer {
             });
             req.on('end', () => {
                 var obj = JSON.parse(data)
-                console.log('end',obj.PhoneNumber);
-                res.send(`${obj.PhoneNumber} POST request to the homepage`);
+                console.log('end',obj.phoneNumber);
+                console.log('end',obj.ID);
+                res.send(` ${obj.phoneNumber} ${obj.ID} POST request to the homepage`);
             });
             
             req.on('close', () => {
